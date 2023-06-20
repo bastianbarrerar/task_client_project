@@ -1,13 +1,172 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #434343;
+}
+#root {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+main {
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  margin: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.main--container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+  min-height: 100%;
+  padding: 20px 0;
+}
+.all-done{
+  display: flex;
+  justify-content: center;
+  margin: auto 0;
+  font-size: 1.5rem;
+}
+.main--add {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20px;
+}
+.main--btn {
+  position: absolute;
+  right: 0px;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  font-weight: 700;
+  margin-right: 5px;
+}
+.main--btn:active {
+  background-color: rgb(0, 0, 0);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main--task {
+  width: 100%;
+  background-color: black;
+  border-radius: 35px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 30px 35px 30px;
+  gap: 15px;
+  font-weight: 600;
+}
+.task-container {
+  width: 100%;
+  height: 45px;
+  background-color: #646464;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  opacity: 0.7;
+}
+.material-symbols-outlined.check {
+  flex: 1;
+  text-align: center;
+}
+.task--ongoing {
+  flex: 5;
+  width: 100px;
+  text-decoration-line: none;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.task--completed {
+  text-decoration-line: line-through;
+  text-align: center;
+  flex: 5;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.material-symbols-outlined.edit {
+  flex: 1;
+  text-align: center;
+}
+.material-symbols-outlined.delete {
+  flex: 1;
+  text-align: center;
+  margin-right: 10px;
+}
+.modal {
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 350px;
+  height: 170px;
+  padding: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #434343;
+  color: white;
+  position: relative;
+}
+.modal--input {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 85%;
+  border-radius: 6px;
+  height: 40px;
+  border: none;
+   box-sizing: border-box;
+   background-color: black;
+   color: white;
+   padding-left: 10px ;
+}
+.modal--input{
+  outline: none;
+}
+.modal--save {
+  position: absolute;
+  top: 27%;
+  left: 70%;
+  translate: -50% -50%;
+}
+.modal--close {
+  position: absolute;
+  top: 27%;
+  left: 85%;
+  translate: -50% -50%;
+}
+
+dialog::backdrop {
+  background-color: black;
+  opacity: 0.8;
+}
+
+@media (width > 960px) {
+  main {
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+  }
+  .main--container {
+    min-height: 80%;
+    max-width: 800px;
+  }
 }
